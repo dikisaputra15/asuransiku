@@ -26,10 +26,37 @@
           
       
           <li class="nav-item">
-            <a href="/admin/user" class="nav-link">
+            <a href="{{ Route('user.index') }}" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>
-                Data User
+                User
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ Route('suratpengantar.index') }}" class="nav-link">
+              <i class="nav-icon far fa-file"></i>
+              <p>
+                Surat Pengantar
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ Route('pesertaasuransi.index') }}" class="nav-link">
+              <i class="nav-icon far fa-file"></i>
+              <p>
+                Peserta Asuransi Ternak
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ Route('periksakesehatan.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Pemeriksaan Kesehatan 
               </p>
             </a>
           </li>

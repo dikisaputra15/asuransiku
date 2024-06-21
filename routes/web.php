@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SuratpengantarController;
+use App\Http\Controllers\PesertaasuransiController;
+use App\Http\Controllers\PeriksakesehatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +29,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('home', function () {
         return view('pages.dashboard');
     })->name('home');
+
+    Route::resource('user', UserController::class);
+    Route::resource('suratpengantar', SuratpengantarController::class);
+    Route::resource('pesertaasuransi', PesertaasuransiController::class);
+    Route::resource('periksakesehatan', PeriksakesehatanController::class);
 });
