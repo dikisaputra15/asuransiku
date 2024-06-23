@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('suratpengantars', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_user');
+            $table->string('kepala_surat');
+            $table->string('tempat');
+            $table->date('tanggal');
+            $table->string('tujuan');
+            $table->string('nama_surat');
+            $table->string('nomor');
+            $table->string('jenis_surat');
+            $table->string('volume');
+            $table->string('keterangan');
+            $table->string('nama_ketua_klp_tani');
             $table->timestamps();
         });
     }
