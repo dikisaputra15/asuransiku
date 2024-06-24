@@ -1,61 +1,56 @@
 @extends('layouts.master')
 
-@section('title','Surat Pengantar')
+@section('title','Peserta Asuransi')
 
 @section('conten')
 
 <x-alert></x-alert>
 <div class="card">
     <div class="card-header bg-white">
-        <h3>Data Surat Pengantar</h3>
+        <h3>Data Peserta Asuransi</h3>
     </div>
     <div class="card-body">
     <div class="form-group">
-        <center><a href="{{ url('/AdminLTE/dist/pdf/suratpengantar.pdf') }}" target="__blank">Lihat Contoh Pengisian Surat</a></center>
-    </div>
-    <div class="form-group">
-        <a href="{{route('suratpengantar.create')}}" class="btn btn-primary">Add New</a>
+        <a href="{{route('pesertaasuransi.create')}}" class="btn btn-primary">Add New</a>
     </div>
     <table id="example" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                         <th>Nama Pemohon</th>
-                        <th>Kepala Surat</th>
-                        <th>Tempat</th>
                         <th>Tanggal</th>
-                        <th>Tujuan</th>
-                        <th>Nama Surat</th>
-                        <th>Nomor</th>
-                        <th>Jenis Surat</th>
-                        <th>Volume</th>
-                        <th>Keterangan</th>
-                        <th>Nama Ketua</th>
+                        <th>Nama Peternak</th>
+                        <th>Nama Ketua Tani</th>
+                        <th>No Handhpone</th>
+                        <th>Desa</th>
+                        <th>Kecamatan</th>
+                        <th>Kabupaten / Kota</th>
+                        <th>Jumlah Sapi</th>
+                        <th>Jumlah Premi Swadaya</th>
                         <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach ($surats as $surat)
+                  @foreach ($pesertas as $peserta)
                     <tr>
-                        <td>{{$surat->name}}</td>
-                        <td>{{$surat->kepala_surat}}</td>
-                        <td>{{$surat->tempat}}</td>
-                        <td>{{$surat->tanggal}}</td>
-                        <td>{{$surat->tujuan}}</td>
-                        <td>{{$surat->nama_surat}}</td>
-                        <td>{{$surat->nomor}}</td>
-                        <td>{{$surat->jenis_surat}}</td>
-                        <td>{{$surat->volume}}</td>
-                        <td>{{$surat->keterangan}}</td>
-                        <td>{{$surat->nama_ketua_klp_tani}}</td>
+                        <td>{{$peserta->name}}</td>
+                        <td>{{$peserta->tgl_pengajuan}}</td>
+                        <td>{{$peserta->nama_peternak}}</td>
+                        <td>{{$peserta->nama_ketua_klp_tani}}</td>
+                        <td>{{$peserta->no_hp}}</td>
+                        <td>{{$peserta->desa}}</td>
+                        <td>{{$peserta->kecamatan}}</td>
+                        <td>{{$peserta->kabupaten_kota}}</td>
+                        <td>{{$peserta->jumlah_sapi}}</td>
+                        <td>{{$peserta->jumlah_premi_swadaya}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href='{{ route('suratpengantar.edit', $surat->id) }}'
+                                <a href='{{ route('peserta.edit', $peserta->id) }}'
                                     class="btn btn-sm btn-info btn-icon">
                                     <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
 
-                                <form action="{{ route('suratpengantar.destroy', $surat->id) }}" method="POST"
+                                <form action="{{ route('peserta.destroy', $peserta->id) }}" method="POST"
                                     class="ml-2">
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <input type="hidden" name="_token"
