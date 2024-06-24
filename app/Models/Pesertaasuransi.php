@@ -18,6 +18,7 @@ class Pesertaasuransi extends Model
         'desa',
         'kecamatan',
         'kabupaten_kota',
+        'jenis_ternak',
         'jumlah_sapi',
         'jumlah_premi_swadaya',
     ];

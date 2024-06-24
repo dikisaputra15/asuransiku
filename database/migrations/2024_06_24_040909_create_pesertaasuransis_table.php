@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten_kota');
+            $table->string('jenis_ternak');
             $table->integer('jumlah_sapi');
             $table->double('jumlah_premi_swadaya');
             $table->timestamps();

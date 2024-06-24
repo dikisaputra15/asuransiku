@@ -18,4 +18,59 @@ class PesertaasuransiController extends Controller
             ->get();
         return view('pages.pesertas.index', compact('pesertas'));
     }
+
+    public function create()
+    {
+        return view('pages.pesertas.create');
+    }
+
+    public function store(Request $request)
+    {
+        Pesertaasuransi::create([
+            'id_user' => $request->id_user,
+            'tgl_pengajuan' => $request->tgl_pengajuan,
+            'nama_peternak' => $request->nama_peternak,
+            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani,
+            'no_hp' => $request->no_hp,
+            'desa' => $request->desa,
+            'kecamatan' => $request->kecamatan,
+            'kabupaten_kota' => $request->kabupaten_kota,
+            'jenis_ternak' => $request->jenis_ternak,
+            'jumlah_sapi' => $request->jumlah_sapi,
+            'jumlah_premi_swadaya' => $request->jumlah_premi_swadaya
+        ]);
+
+        return redirect()->route('pesertaasuransi.index')->with('success', 'Peserta successfully created');
+    }
+
+    public function edit($id)
+    {
+        $pesertaasuransi = \App\Models\Pesertaasuransi::findOrFail($id);
+        return view('pages.pesertas.edit', compact('pesertaasuransi'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        DB::table('pesertaasuransis')->where('id',$id)->update([
+            'id_user' => $request->id_user,
+            'tgl_pengajuan' => $request->tgl_pengajuan,
+            'nama_peternak' => $request->nama_peternak,
+            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani,
+            'no_hp' => $request->no_hp,
+            'desa' => $request->desa,
+            'kecamatan' => $request->kecamatan,
+            'kabupaten_kota' => $request->kabupaten_kota,
+            'jenis_ternak' => $request->jenis_ternak,
+            'jumlah_sapi' => $request->jumlah_sapi,
+            'jumlah_premi_swadaya' => $request->jumlah_premi_swadaya
+        ]);
+
+        return redirect()->route('pesertaasuransi.index')->with('success', 'Peserta successfully updated');
+    }
+
+    public function destroy(Pesertaasuransi $pesertaasuransi)
+    {
+        $pesertaasuransi->delete();
+        return redirect()->route('pesertaasuransi.index')->with('success', 'Peserta successfully deleted');
+    }
 }

@@ -24,6 +24,7 @@
                         <th>Desa</th>
                         <th>Kecamatan</th>
                         <th>Kabupaten / Kota</th>
+                        <th>Jenis Ternak</th>
                         <th>Jumlah Sapi</th>
                         <th>Jumlah Premi Swadaya</th>
                         <th>Action</th>
@@ -40,17 +41,18 @@
                         <td>{{$peserta->desa}}</td>
                         <td>{{$peserta->kecamatan}}</td>
                         <td>{{$peserta->kabupaten_kota}}</td>
+                        <td>{{$peserta->jenis_ternak}}</td>
                         <td>{{$peserta->jumlah_sapi}}</td>
                         <td>{{$peserta->jumlah_premi_swadaya}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href='{{ route('peserta.edit', $peserta->id) }}'
+                                <a href='{{ route('pesertaasuransi.edit', $peserta->id) }}'
                                     class="btn btn-sm btn-info btn-icon">
                                     <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
 
-                                <form action="{{ route('peserta.destroy', $peserta->id) }}" method="POST"
+                                <form action="{{ route('pesertaasuransi.destroy', $peserta->id) }}" method="POST"
                                     class="ml-2">
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <input type="hidden" name="_token"
