@@ -28,13 +28,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Nama Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_klp_ternak" value="{{ $pesertaasuransi->nama_klp_ternak }}">
+                </div>
+
+                <div class="form-group">
                     <label>Nama Peternak</label>
                     <input type="text" class="form-control" name="nama_peternak" value="{{ $pesertaasuransi->nama_peternak }}">
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Ketua Kelompok Tani</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_tani" value="{{ $pesertaasuransi->nama_ketua_klp_tani }}">
+                    <label>Nama Ketua Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_ketua_klp_tani" value="{{ $pesertaasuransi->nama_ketua_klp_ternak }}">
                 </div>
 
                 <div class="form-group">

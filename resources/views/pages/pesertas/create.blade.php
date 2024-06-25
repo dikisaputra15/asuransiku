@@ -27,13 +27,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Nama Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_klp_ternak" required>
+                </div>
+
+                <div class="form-group">
                     <label>Nama Peternak</label>
                     <input type="text" class="form-control" name="nama_peternak" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Ketua Kelompok Tani</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_tani" required>
+                    <label>Nama Ketua Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_ketua_klp_ternak" required>
                 </div>
 
                 <div class="form-group">

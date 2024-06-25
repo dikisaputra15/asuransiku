@@ -46,7 +46,7 @@
                         <td>{{$surat->jenis_surat}}</td>
                         <td>{{$surat->volume}}</td>
                         <td>{{$surat->keterangan}}</td>
-                        <td>{{$surat->nama_ketua_klp_tani}}</td>
+                        <td>{{$surat->nama_ketua_klp_ternak}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
                                 <a href='{{ route('suratpengantar.edit', $surat->id) }}'

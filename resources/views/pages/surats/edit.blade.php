@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Ketuan Kelompok Tani</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_tani" value="{{ $suratpengantar->nama_ketua_klp_tani }}">
+                    <label>Nama Ketua Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_ketua_klp_ternak" value="{{ $suratpengantar->nama_ketua_klp_ternak }}">
                 </div>
 
                 <div class="form-group">

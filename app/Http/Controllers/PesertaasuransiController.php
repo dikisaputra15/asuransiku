@@ -29,8 +29,9 @@ class PesertaasuransiController extends Controller
         Pesertaasuransi::create([
             'id_user' => $request->id_user,
             'tgl_pengajuan' => $request->tgl_pengajuan,
+            'nama_klp_ternak' => $request->nama_klp_ternak,
             'nama_peternak' => $request->nama_peternak,
-            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani,
+            'nama_ketua_klp_ternak' => $request->nama_ketua_klp_ternak,
             'no_hp' => $request->no_hp,
             'desa' => $request->desa,
             'kecamatan' => $request->kecamatan,
@@ -54,8 +55,9 @@ class PesertaasuransiController extends Controller
         DB::table('pesertaasuransis')->where('id',$id)->update([
             'id_user' => $request->id_user,
             'tgl_pengajuan' => $request->tgl_pengajuan,
+            'nama_klp_ternak' => $request->nama_klp_ternak,
             'nama_peternak' => $request->nama_peternak,
-            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani,
+            'nama_ketua_klp_ternak' => $request->nama_ketua_klp_ternak,
             'no_hp' => $request->no_hp,
             'desa' => $request->desa,
             'kecamatan' => $request->kecamatan,

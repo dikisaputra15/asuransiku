@@ -67,8 +67,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Ketuan Kelompok Tani</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_tani" required>
+                    <label>Nama Ketua Kelompok Ternak</label>
+                    <input type="text" class="form-control" name="nama_ketua_klp_ternak" required>
                 </div>
 
                 <div class="form-group">

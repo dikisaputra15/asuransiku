@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('jenis_surat');
             $table->string('volume');
             $table->string('keterangan');
-            $table->string('nama_ketua_klp_tani');
+            $table->string('nama_ketua_klp_ternak');
             $table->timestamps();
         });
     }

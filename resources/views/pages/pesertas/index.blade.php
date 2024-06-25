@@ -18,8 +18,9 @@
                   <tr>
                         <th>Nama Pemohon</th>
                         <th>Tanggal</th>
+                        <th>Nama Kelompok Ternak</th>
                         <th>Nama Peternak</th>
-                        <th>Nama Ketua Tani</th>
+                        <th>Nama Ketua Ternak</th>
                         <th>No Handhpone</th>
                         <th>Desa</th>
                         <th>Kecamatan</th>
@@ -35,8 +36,9 @@
                     <tr>
                         <td>{{$peserta->name}}</td>
                         <td>{{$peserta->tgl_pengajuan}}</td>
+                        <td>{{$peserta->nama_klp_ternak}}</td>
                         <td>{{$peserta->nama_peternak}}</td>
-                        <td>{{$peserta->nama_ketua_klp_tani}}</td>
+                        <td>{{$peserta->nama_ketua_klp_ternak}}</td>
                         <td>{{$peserta->no_hp}}</td>
                         <td>{{$peserta->desa}}</td>
                         <td>{{$peserta->kecamatan}}</td>
