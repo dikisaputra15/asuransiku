@@ -1,6 +1,6 @@
 <!-- Preloader -->
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{asset('AdminLTE')}}/dist/img/cc.jpg" height="60" width="60">
+    <img class="animation__shake" src="{{asset('AdminLTE')}}/dist/img/AdminLTELogo.png" height="60" width="60">
 </div>
  <!-- Navbar -->
  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
