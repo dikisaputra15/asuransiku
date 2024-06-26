@@ -10,31 +10,54 @@
         <h3>Data Pemeriksaan Ternak</h3>
     </div>
     <div class="card-body">
+    <div class="form-group">
+        <a href="{{route('periksakesehatan.create')}}" class="btn btn-primary">Add New</a>
+    </div>
     <table id="example" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                         <th>No</th>
-                        <th>Nama Kelompok Ternak</th>
+                        <th>Tanggal Pemeriksaan</th>
                         <th>Nama Peternak</th>
-                        <th>Jenis Ternak</th>
+                        <th>Pemeriksa 1</th>
+                        <th>Pemeriksa 2</th>
                         <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                   @php($i = 1)
-                  @foreach ($pesertas as $peserta)
+                  @foreach ($periksas as $periksa)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{$peserta->nama_klp_ternak}}</td>
-                        <td>{{$peserta->nama_peternak}}</td>
-                        <td>{{$peserta->jenis_ternak}}</td>
+                        <td>{{$periksa->tgl_pemeriksaan}}</td>
+                        <td>{{$periksa->nama_peternak}}</td>
+                        <td>{{$periksa->pemeriksa1}}</td>
+                        <td>{{$periksa->pemeriksa2}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href=''
-                                    class="btn btn-sm btn-info btn-icon">
+
+                                <a href="/periksakesehatan/<?php echo $periksa->id ?>/lihat"
+                                    class="btn btn-sm btn-success btn-icon mr-2">
                                     <i class="fas fa-file"></i>
+                                    Lihat
+                                </a>
+
+                                <a href='{{ route('periksakesehatan.edit', $periksa->id) }}'
+                                    class="btn btn-sm btn-info btn-icon">
+                                    <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
+
+                                <form action="{{ route('periksakesehatan.destroy', $periksa->id) }}" method="POST"
+                                    class="ml-2">
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <input type="hidden" name="_token"
+                                        value="{{ csrf_token() }}" />
+                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete" onclick="return confirm('Are you sure to delete this ?');">
+                                        <i class="fas fa-times"></i> Delete
+                                    </button>
+                                </form>
+
                             </div>
                         </td>
                     </tr>

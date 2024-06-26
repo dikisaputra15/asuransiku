@@ -20,6 +20,6 @@ class Suratpengantar extends Model
         'jenis_surat',
         'volume',
         'keterangan',
-        'nama_ketua_klp_tani',
+        'nama_ketua_klp_ternak',
     ];
 }

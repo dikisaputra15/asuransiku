@@ -37,7 +37,7 @@ class PesertaasuransiController extends Controller
             'kecamatan' => $request->kecamatan,
             'kabupaten_kota' => $request->kabupaten_kota,
             'jenis_ternak' => $request->jenis_ternak,
-            'jumlah_sapi' => $request->jumlah_sapi,
+            'jumlah_hewan_ternak' => $request->jumlah_hewan_ternak,
             'jumlah_premi_swadaya' => $request->jumlah_premi_swadaya
         ]);
 
@@ -63,7 +63,7 @@ class PesertaasuransiController extends Controller
             'kecamatan' => $request->kecamatan,
             'kabupaten_kota' => $request->kabupaten_kota,
             'jenis_ternak' => $request->jenis_ternak,
-            'jumlah_sapi' => $request->jumlah_sapi,
+            'jumlah_hewan_ternak' => $request->jumlah_hewan_sternak,
             'jumlah_premi_swadaya' => $request->jumlah_premi_swadaya
         ]);
 

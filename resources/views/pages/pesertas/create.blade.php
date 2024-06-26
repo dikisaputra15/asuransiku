@@ -67,8 +67,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Jumlah Sapi</label>
-                    <input type="number" class="form-control" name="jumlah_sapi" required>
+                    <label>Jumlah Hewan Ternak</label>
+                    <input type="number" class="form-control" name="jumlah_hewan_ternak" required>
                 </div>
 
                 <div class="form-group">

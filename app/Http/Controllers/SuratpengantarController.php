@@ -37,7 +37,7 @@ class SuratpengantarController extends Controller
             'jenis_surat' => $request->jenis_surat,
             'volume' => $request->volume,
             'keterangan' => $request->keterangan,
-            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani
+            'nama_ketua_klp_ternak' => $request->nama_ketua_klp_ternak
         ]);
 
         return redirect()->route('suratpengantar.index')->with('success', 'Surat successfully created');
@@ -68,7 +68,7 @@ class SuratpengantarController extends Controller
             'jenis_surat' => $request->jenis_surat,
             'volume' => $request->volume,
             'keterangan' => $request->keterangan,
-            'nama_ketua_klp_tani' => $request->nama_ketua_klp_tani
+            'nama_ketua_klp_ternak' => $request->nama_ketua_klp_ternak
         ]);
 
         return redirect()->route('suratpengantar.index')->with('success', 'Surat successfully updated');

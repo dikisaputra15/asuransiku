@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Jumlah Sapi</label>
-                    <input type="number" class="form-control" name="jumlah_sapi" value="{{ $pesertaasuransi->jumlah_sapi }}">
+                    <label>Jumlah Hewan Ternak</label>
+                    <input type="number" class="form-control" name="jumlah_sapi" value="{{ $pesertaasuransi->jumlah_hewan_ternak }}">
                 </div>
 
                 <div class="form-group">

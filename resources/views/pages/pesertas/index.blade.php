@@ -26,7 +26,7 @@
                         <th>Kecamatan</th>
                         <th>Kabupaten / Kota</th>
                         <th>Jenis Ternak</th>
-                        <th>Jumlah Sapi</th>
+                        <th>Jumlah Hewan Ternak</th>
                         <th>Jumlah Premi Swadaya</th>
                         <th>Action</th>
                   </tr>
@@ -44,7 +44,7 @@
                         <td>{{$peserta->kecamatan}}</td>
                         <td>{{$peserta->kabupaten_kota}}</td>
                         <td>{{$peserta->jenis_ternak}}</td>
-                        <td>{{$peserta->jumlah_sapi}}</td>
+                        <td>{{$peserta->jumlah_hewan_ternak}}</td>
                         <td>{{$peserta->jumlah_premi_swadaya}}</td>
                         <td>
                             <div class="d-flex justify-content-center">

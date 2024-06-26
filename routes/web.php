@@ -34,4 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('suratpengantar', SuratpengantarController::class);
     Route::resource('pesertaasuransi', PesertaasuransiController::class);
     Route::resource('periksakesehatan', PeriksakesehatanController::class);
+
+    Route::get('/periksakesehatan/{id}/lihat', [App\Http\Controllers\PeriksakesehatanController::class, 'lihat']);
 });
