@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten_kota');
-            $table->string('jenis_ternak');
+            $table->string('jenis_hewan_ternak');
             $table->integer('jumlah_ternak');
             $table->double('jumlah_premi_swadaya');
             $table->timestamps();

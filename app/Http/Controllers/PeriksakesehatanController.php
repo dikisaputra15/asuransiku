@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Periksakesehatan;
+use App\Models\Detailperiksa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -65,6 +66,47 @@ class PeriksakesehatanController extends Controller
     public function lihat($id)
     {
         $periksa = Periksakesehatan::find($id);
-        return view('pages.periksas.lihat', compact('periksa'));
+
+        $details = DB::table('detailperiksas')->where('id_periksa', $id)->orderBy('detailperiksas.id', 'desc')->get();
+
+        return view('pages.periksas.lihat', compact('periksa','details'));
+    }
+
+    public function storehasilperiksa(Request $request)
+    {
+        Detailperiksa::create([
+            'id_periksa' => $request->id_periksa,
+            'nama_ternak' => $request->nama_ternak,
+            'nomor' => $request->nomor,
+            'hasil_pemeriksaan' => $request->hasil_pemeriksaan
+        ]);
+
+        return redirect("periksakesehatan/$request->id_periksa/lihat")->with('success', 'Data successfully created');
+    }
+
+    public function destroydetail($id)
+    {
+        DB::table('detailperiksas')->where('id', $id)->delete();
+        return redirect()->route('periksakesehatan.index')->with('success', 'Data successfully deleted');
+    }
+
+    public function editdetail($id)
+    {
+        $detail = Detailperiksa::find($id);
+
+        return view('pages.periksas.editdetail', compact('detail'));
+    }
+
+    public function updatedetailperiksa(Request $request)
+    {
+        $id = $request->id;
+        DB::table('detailperiksas')->where('id',$id)->update([
+            'id_periksa' => $request->id_periksa,
+            'nama_ternak' => $request->nama_ternak,
+            'nomor' => $request->nomor,
+            'hasil_pemeriksaan' => $request->hasil_pemeriksaan
+		]);
+
+        return redirect("periksakesehatan/$request->id_periksa/lihat")->with('success', 'Update Data successfully created');
     }
 }
