@@ -45,4 +45,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/periksakesehatan/updatedetail', [App\Http\Controllers\PeriksakesehatanController::class, 'updatedetailperiksa']);
     Route::get('/periksakesehatan/{id}/lihatpdf', [App\Http\Controllers\PeriksakesehatanController::class, 'lihatpdf']);
     Route::get('/home/baperiksa', [App\Http\Controllers\HomeController::class, 'baperiksa']);
+    Route::get('/suratpengantar/{id}/lihatpdf', [App\Http\Controllers\SuratpengantarController::class, 'lihatpdf']);
 });

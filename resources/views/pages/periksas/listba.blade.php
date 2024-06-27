@@ -10,7 +10,7 @@
         <h3>List Berita Acara Pemeriksaan</h3>
     </div>
     <div class="card-body">
-   
+
     <table id="example" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -31,7 +31,7 @@
                             <div class="d-flex justify-content-center">
 
                                 <a href="/periksakesehatan/<?php echo $periksa->id ?>/lihatpdf"
-                                    class="btn btn-sm btn-success btn-icon mr-2">
+                                    class="btn btn-sm btn-success btn-icon mr-2" target="__blank">
                                     <i class="fas fa-file"></i>
                                     Lihat PDF
                                 </a>

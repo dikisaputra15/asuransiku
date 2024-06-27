@@ -50,7 +50,7 @@
                         <td>
                             <div class="d-flex justify-content-center">
                                 <a href="/suratpengantar/<?php echo $surat->id ?>/lihatpdf"
-                                    class="btn btn-sm btn-success btn-icon mr-2">
+                                    class="btn btn-sm btn-success btn-icon mr-2" target="__blank">
                                     <i class="fas fa-file"></i>
                                     Lihat
                                 </a>

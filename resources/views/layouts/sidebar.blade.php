@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{route('home')}}" class="brand-link">
       <img src="{{asset('AdminLTE')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">CMS</span>
+      <span class="brand-text font-weight-light">Asuransi</span>
     </a>
 
     <!-- Sidebar -->
@@ -65,7 +65,7 @@
             <a href="/home/baperiksa" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                BA Pemeriksaan 
+                BA Pemeriksaan
               </p>
             </a>
           </li>

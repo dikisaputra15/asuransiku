@@ -7,6 +7,7 @@ use App\Models\Detailperiksa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use PDF;
 
 class PeriksakesehatanController extends Controller
 {
@@ -114,7 +115,9 @@ class PeriksakesehatanController extends Controller
     {
         $details = DB::table('detailperiksas')->where('id_periksa', $id)->orderBy('detailperiksas.id', 'desc')->get();
 
-        $pdf = PDF::loadView('baperiksapdf', compact('details'));
+        $tim = Periksakesehatan::find($id);
+
+        $pdf = PDF::loadView('baperiksapdf', compact('details','tim'));
         $pdf->setPaper('A4', 'potrait');
         return $pdf->stream('baperiksapdf.pdf');
     }

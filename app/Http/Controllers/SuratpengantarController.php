@@ -6,6 +6,7 @@ use App\Models\Suratpengantar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use PDF;
 
 class SuratpengantarController extends Controller
 {
@@ -72,5 +73,14 @@ class SuratpengantarController extends Controller
         ]);
 
         return redirect()->route('suratpengantar.index')->with('success', 'Surat successfully updated');
+    }
+
+    public function lihatpdf($id)
+    {
+        $surat = Suratpengantar::find($id);
+
+        $pdf = PDF::loadView('suratpdf', compact('surat'));
+        $pdf->setPaper('A4', 'potrait');
+        return $pdf->stream('suratpdf.pdf');
     }
 }
