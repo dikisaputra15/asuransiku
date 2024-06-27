@@ -60,6 +60,15 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/home/baperiksa" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                BA Pemeriksaan 
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -49,6 +49,12 @@
                         <td>{{$surat->nama_ketua_klp_ternak}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
+                                <a href="/suratpengantar/<?php echo $surat->id ?>/lihatpdf"
+                                    class="btn btn-sm btn-success btn-icon mr-2">
+                                    <i class="fas fa-file"></i>
+                                    Lihat
+                                </a>
+
                                 <a href='{{ route('suratpengantar.edit', $surat->id) }}'
                                     class="btn btn-sm btn-info btn-icon">
                                     <i class="fas fa-edit"></i>

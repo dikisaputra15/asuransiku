@@ -109,4 +109,14 @@ class PeriksakesehatanController extends Controller
 
         return redirect("periksakesehatan/$request->id_periksa/lihat")->with('success', 'Update Data successfully created');
     }
+
+    public function lihatpdf($id)
+    {
+        $details = DB::table('detailperiksas')->where('id_periksa', $id)->orderBy('detailperiksas.id', 'desc')->get();
+
+        $pdf = PDF::loadView('baperiksapdf', compact('details'));
+        $pdf->setPaper('A4', 'potrait');
+        return $pdf->stream('baperiksapdf.pdf');
+    }
+
 }

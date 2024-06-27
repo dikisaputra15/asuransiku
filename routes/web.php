@@ -43,4 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/periksakesehatan/deldetail/{id}', [App\Http\Controllers\PeriksakesehatanController::class, 'destroydetail']);
     Route::get('/periksakesehatan/{id}/editdetail', [App\Http\Controllers\PeriksakesehatanController::class, 'editdetail']);
     Route::post('/periksakesehatan/updatedetail', [App\Http\Controllers\PeriksakesehatanController::class, 'updatedetailperiksa']);
+    Route::get('/periksakesehatan/{id}/lihatpdf', [App\Http\Controllers\PeriksakesehatanController::class, 'lihatpdf']);
+    Route::get('/home/baperiksa', [App\Http\Controllers\HomeController::class, 'baperiksa']);
 });

@@ -18,4 +18,14 @@ class HomeController extends Controller
         $PeriksaCount = Periksakesehatan::count();
         return view('pages.dashboard', compact('SuratCount','PesertaCount','PeriksaCount'));
     }
+
+    public function baperiksa()
+    {
+        $periksas = DB::table('periksakesehatans')
+        ->join('pesertaasuransis', 'pesertaasuransis.id', '=', 'periksakesehatans.id_peserta')
+        ->select('periksakesehatans.*', 'pesertaasuransis.nama_peternak')
+        ->orderBy('periksakesehatans.id', 'desc')
+        ->get();
+        return view('pages.periksas.listba', compact('periksas'));
+    }
 }

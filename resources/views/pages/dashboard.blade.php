@@ -16,7 +16,7 @@
             <div class="small-box bg-info">
               <div class="inner">
 
-                <p>Surat Pengantar</p></br>
+                <p>Surat Pengantar</p>
               </div>
               <h5 style="text-align: center;">{{ $SuratCount }}</h5>
             </div>
@@ -26,7 +26,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <p>Peserta Asuransi</p></br>
+                <p>Peserta Asuransi</p>
               </div>
 
               <h5 style="text-align: center;">{{ $PesertaCount }}</h5>
