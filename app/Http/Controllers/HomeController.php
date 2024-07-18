@@ -13,10 +13,11 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $SuratCount = Suratpengantar::count();
-        $PesertaCount = Pesertaasuransi::count();
-        $PeriksaCount = Periksakesehatan::count();
-        return view('pages.dashboard', compact('SuratCount','PesertaCount','PeriksaCount'));
+        $diproses = Pesertaasuransi::where('status', 'diproses')->count();
+        $diterima = Pesertaasuransi::where('status', 'diterima')->count();
+        $ditolak = Pesertaasuransi::where('status', 'ditolak')->count();
+       
+        return view('pages.dashboard', compact('diproses','diterima','ditolak'));
     }
 
     public function baperiksa()
@@ -27,5 +28,15 @@ class HomeController extends Controller
         ->orderBy('periksakesehatans.id', 'desc')
         ->get();
         return view('pages.periksas.listba', compact('periksas'));
+    }
+
+    public function permohonan()
+    {
+        $permohonans = DB::table('suratpengantars')
+        ->join('users', 'users.id', '=', 'suratpengantars.id_user')
+        ->select('suratpengantars.*', 'users.name')
+        ->orderBy('suratpengantars.id', 'desc')
+        ->get();
+        return view('pages.periksas.permohonan', compact('permohonans'));
     }
 }

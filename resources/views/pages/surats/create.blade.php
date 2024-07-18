@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Form Buat Surat')
+@section('title','Form Buat Pengajuan')
 
 @section('conten')
 
@@ -64,11 +64,6 @@
                 <div class="form-group">
                     <label>Keterangan</label>
                     <input type="text" class="form-control" name="keterangan" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Ketua Kelompok Ternak</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_ternak" required>
                 </div>
 
                 <div class="form-group">

@@ -1,17 +1,17 @@
 @extends('layouts.master')
 
-@section('title','Surat Pengantar')
+@section('title','Pengajuan Asuransi')
 
 @section('conten')
 
 <x-alert></x-alert>
 <div class="card">
     <div class="card-header bg-white">
-        <h3>Data Surat Pengantar</h3>
+        <h3>Data Permohonan Pengajuan Asuransi</h3>
     </div>
     <div class="card-body">
     <div class="form-group">
-        <center><a href="{{ url('/AdminLTE/dist/pdf/suratpengantar.pdf') }}" target="__blank">Lihat Contoh Pengisian Surat</a></center>
+        <center><a href="{{ url('/AdminLTE/dist/pdf/suratpengantar.pdf') }}" target="__blank">Lihat Contoh Pengisian Surat Pengajuan Asuransi</a></center>
     </div>
     <div class="form-group">
         <a href="{{route('suratpengantar.create')}}" class="btn btn-primary">Add New</a>
@@ -29,7 +29,6 @@
                         <th>Jenis Surat</th>
                         <th>Volume</th>
                         <th>Keterangan</th>
-                        <th>Nama Ketua</th>
                         <th>Action</th>
                   </tr>
                   </thead>
@@ -46,14 +45,13 @@
                         <td>{{$surat->jenis_surat}}</td>
                         <td>{{$surat->volume}}</td>
                         <td>{{$surat->keterangan}}</td>
-                        <td>{{$surat->nama_ketua_klp_ternak}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="/suratpengantar/<?php echo $surat->id ?>/lihatpdf"
+                                <!-- <a href="/suratpengantar/<?php echo $surat->id ?>/lihatpdf"
                                     class="btn btn-sm btn-success btn-icon mr-2" target="__blank">
                                     <i class="fas fa-file"></i>
                                     Lihat
-                                </a>
+                                </a> -->
 
                                 <a href='{{ route('suratpengantar.edit', $surat->id) }}'
                                     class="btn btn-sm btn-info btn-icon">

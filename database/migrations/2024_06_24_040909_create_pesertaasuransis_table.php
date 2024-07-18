@@ -15,16 +15,16 @@ return new class extends Migration
             $table->id();
             $table->integer('id_user');
             $table->date('tgl_pengajuan');
-            $table->string('nama_klp_ternak');
             $table->string('nama_peternak');
-            $table->string('nama_ketua_klp_ternak');
             $table->string('no_hp');
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten_kota');
             $table->string('jenis_hewan_ternak');
             $table->integer('jumlah_ternak');
-            $table->double('jumlah_premi_swadaya');
+            $table->double('harga');
+            $table->string('status');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

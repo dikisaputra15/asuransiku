@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title','Peserta Asuransi')
+@section('title','Informasi Data Pengajuan')
 
 @section('conten')
 
 <x-alert></x-alert>
 <div class="card">
     <div class="card-header bg-white">
-        <h3>Data Peserta Asuransi</h3>
+        <h3>Informasi Pengajuan Peserta Asuransi</h3>
     </div>
     <div class="card-body">
     <div class="form-group">
@@ -18,16 +18,16 @@
                   <tr>
                         <th>Nama Pemohon</th>
                         <th>Tanggal</th>
-                        <th>Nama Kelompok Ternak</th>
                         <th>Nama Peternak</th>
-                        <th>Nama Ketua Ternak</th>
                         <th>No Handhpone</th>
                         <th>Desa</th>
                         <th>Kecamatan</th>
                         <th>Kabupaten / Kota</th>
                         <th>Jenis Ternak</th>
                         <th>Jumlah Hewan Ternak</th>
-                        <th>Jumlah Premi Swadaya</th>
+                        <th>Harga</th>
+                        <th>Status</th>
+                        <th>Keterangan</th>
                         <th>Action</th>
                   </tr>
                   </thead>
@@ -36,18 +36,24 @@
                     <tr>
                         <td>{{$peserta->name}}</td>
                         <td>{{$peserta->tgl_pengajuan}}</td>
-                        <td>{{$peserta->nama_klp_ternak}}</td>
                         <td>{{$peserta->nama_peternak}}</td>
-                        <td>{{$peserta->nama_ketua_klp_ternak}}</td>
                         <td>{{$peserta->no_hp}}</td>
                         <td>{{$peserta->desa}}</td>
                         <td>{{$peserta->kecamatan}}</td>
                         <td>{{$peserta->kabupaten_kota}}</td>
                         <td>{{$peserta->jenis_ternak}}</td>
                         <td>{{$peserta->jumlah_hewan_ternak}}</td>
-                        <td>{{$peserta->jumlah_premi_swadaya}}</td>
+                        <td>{{$peserta->harga}}</td>
+                        <td>{{$peserta->status}}</td>
+                        <td>{{$peserta->keterangan}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
+                                <a href="/pengajuan/<?php echo $peserta->id ?>/updatepengajuan"
+                                    class="btn btn-sm btn-success btn-icon mr-2">
+                                    <i class="fas fa-file"></i>
+                                    Proses
+                                </a>
+
                                 <a href='{{ route('pesertaasuransi.edit', $peserta->id) }}'
                                     class="btn btn-sm btn-info btn-icon">
                                     <i class="fas fa-edit"></i>

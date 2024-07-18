@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Edit Surat')
+@section('title','Edit Pengajuan')
 
 @section('conten')
 
@@ -65,11 +65,6 @@
                 <div class="form-group">
                     <label>Keterangan</label>
                     <input type="text" class="form-control" name="keterangan" value="{{ $suratpengantar->keterangan }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Ketua Kelompok Ternak</label>
-                    <input type="text" class="form-control" name="nama_ketua_klp_ternak" value="{{ $suratpengantar->nama_ketua_klp_ternak }}">
                 </div>
 
                 <div class="form-group">

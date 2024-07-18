@@ -12,15 +12,15 @@ class Pesertaasuransi extends Model
     protected $fillable = [
         'id_user',
         'tgl_pengajuan',
-        'nama_klp_ternak',
         'nama_peternak',
-        'nama_ketua_klp_ternak',
         'no_hp',
         'desa',
         'kecamatan',
         'kabupaten_kota',
         'jenis_ternak',
         'jumlah_hewan_ternak',
-        'jumlah_premi_swadaya',
+        'harga',
+        'status',
+        'keterangan',
     ];
 }

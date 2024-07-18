@@ -29,7 +29,7 @@
             <a href="{{ Route('user.index') }}" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>
-                User
+                Management User
               </p>
             </a>
           </li>
@@ -38,7 +38,7 @@
             <a href="{{ Route('suratpengantar.index') }}" class="nav-link">
               <i class="nav-icon far fa-file"></i>
               <p>
-                Surat Pengantar
+                Pengajuan Asuransi
               </p>
             </a>
           </li>
@@ -47,7 +47,7 @@
             <a href="{{ Route('pesertaasuransi.index') }}" class="nav-link">
               <i class="nav-icon far fa-file"></i>
               <p>
-                Peserta Asuransi Ternak
+                Informasi Pengajuan
               </p>
             </a>
           </li>
@@ -62,10 +62,19 @@
           </li>
 
           <li class="nav-item">
-            <a href="/home/baperiksa" class="nav-link">
+            <a href="/home/permohonan" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                BA Pemeriksaan
+                Laporan Pengajuan
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/home/baperiksa" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>
+                Laporan Pemeriksaan
               </p>
             </a>
           </li>
