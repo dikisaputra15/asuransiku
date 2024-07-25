@@ -41,8 +41,16 @@
                             Admin
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="roles" value="user" class="radio">
-                            User
+                            <input type="radio" name="roles" value="peternak" class="radio">
+                            Peternak
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="roles" value="staff" class="radio">
+                            Staff Bagian Bencana
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="roles" value="kepala" class="radio">
+                            Kepala Bagian
                         </label>
                     </div>
                 </div>

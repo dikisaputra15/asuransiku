@@ -42,9 +42,19 @@
                             Admin
                         </label>
                         <label class="selectgroup-item">
-                            <input type="radio" name="roles" value="user" class="radio"
-                            @if ($user->roles == 'user') checked @endif>
-                            User
+                            <input type="radio" name="roles" value="peternak" class="radio"
+                            @if ($user->roles == 'peternak') checked @endif>
+                            Peternak
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="roles" value="staff" class="radio"
+                            @if ($user->roles == 'staff') checked @endif>
+                            Staff Bagian Bencana
+                        </label>
+                        <label class="selectgroup-item">
+                            <input type="radio" name="roles" value="kepala" class="radio"
+                            @if ($user->roles == 'kepala') checked @endif>
+                            Kepala Bagian
                         </label>
                     </div>
                 </div>

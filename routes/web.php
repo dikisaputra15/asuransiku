@@ -18,13 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/alllogin', function () {
     return view('pages.auth.login');
 });
+
+// Route::get('/', function () {
+//     return view('pages.auth.login');
+// });
 
 Route::middleware(['auth'])->group(function () {
     // Route::get('home', function () {
@@ -49,4 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/suratpengantar/{id}/lihatpdf', [App\Http\Controllers\SuratpengantarController::class, 'lihatpdf']);
     Route::get('/pengajuan/{id}/updatepengajuan', [App\Http\Controllers\PesertaasuransiController::class, 'updatepengajuan']);
     Route::post('/prosespengajuan', [App\Http\Controllers\PesertaasuransiController::class, 'prosespengajuan']);
+    Route::post('/pdflappengajuan', [App\Http\Controllers\HomeController::class, 'lihatpdfpengajuan']);
+    Route::get('/informasi', [App\Http\Controllers\HomeController::class, 'informasi']);
+    Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
 });

@@ -10,7 +10,7 @@
         <h3>Form Peserta Asuransi</h3>
     </div>
     <div class="card-body">
-    <form action="{{ route('pesertaasuransi.store') }}" method="POST">
+    <form action="{{ route('pesertaasuransi.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="card-body">
 
@@ -58,12 +58,27 @@
 
                 <div class="form-group">
                     <label>Jumlah Hewan Ternak</label>
-                    <input type="number" class="form-control" name="jumlah_hewan_ternak" required>
+                    <input type="number" class="form-control" name="jumlah_ternak" required>
                 </div>
 
                 <div class="form-group">
                     <label>Harga</label>
                     <input type="number" class="form-control" name="harga" required>
+                </div>
+
+                <div class="form-group">
+                    <label>KTP</label>
+                    <input type="file" class="form-control" name="ktp" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Foto Ternak</label>
+                    <input type="file" class="form-control" name="foto" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Surat Pengantar</label>
+                    <input type="file" class="form-control" name="surat" required>
                 </div>
 
                 <div class="form-group">

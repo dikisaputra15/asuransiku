@@ -10,7 +10,7 @@
         <h3>Edit Peserta Asuransi</h3>
     </div>
     <div class="card-body">
-        <form action="{{ route('pesertaasuransi.update', $pesertaasuransi) }}" method="POST">
+        <form action="{{ route('pesertaasuransi.update', $pesertaasuransi) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
@@ -58,13 +58,31 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Jumlah Hewan Ternak</label>
-                    <input type="number" class="form-control" name="jumlah_sapi" value="{{ $pesertaasuransi->jumlah_hewan_ternak }}">
+                    <label>Jumlah Ternak</label>
+                    <input type="number" class="form-control" name="jumlah_ternak" value="{{ $pesertaasuransi->jumlah_ternak }}">
                 </div>
 
                 <div class="form-group">
                     <label>Harga</label>
                     <input type="number" class="form-control" name="harga" value="{{ $pesertaasuransi->harga }}">
+                </div>
+
+                <div class="form-group">
+                    <label>KTP</label>
+                    <input type="file" class="form-control" name="ktp">
+                    <input type="text" class="form-control" name="old_file1" value="{{ $pesertaasuransi->ktp }}" hidden>
+                </div>
+
+                <div class="form-group">
+                    <label>Foto Ternak</label>
+                    <input type="file" class="form-control" name="foto">
+                    <input type="text" class="form-control" name="old_file2" value="{{ $pesertaasuransi->foto_ternak }}" hidden>
+                </div>
+
+                <div class="form-group">
+                    <label>Surat Pengantar</label>
+                    <input type="file" class="form-control" name="surat">
+                    <input type="text" class="form-control" name="old_file3" value="{{ $pesertaasuransi->surat_pengantar }}" hidden>
                 </div>
 
                 <div class="form-group">
