@@ -12,9 +12,11 @@ class PesertaasuransiController extends Controller
 {
     public function index(Request $request)
     {
+        $id = auth()->user()->id;
         $pesertas = DB::table('pesertaasuransis')
             ->join('users', 'users.id', '=', 'pesertaasuransis.id_user')
             ->select('pesertaasuransis.*', 'users.name')
+            ->where('pesertaasuransis.id_user', $id)
             ->orderBy('pesertaasuransis.id', 'desc')
             ->get();
         return view('pages.pesertas.index', compact('pesertas'));
