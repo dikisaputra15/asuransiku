@@ -22,16 +22,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
 
-                <h5><a href="{{ Route('pesertaasuransi.index') }}" style="color:white;"> Informasi Pengajuan </a></h5>
-              </div>
-
-            </div>
-          </div>
     <?php } ?>
 
     <?php if(auth()->user()->roles == 'peternak'){ ?>
