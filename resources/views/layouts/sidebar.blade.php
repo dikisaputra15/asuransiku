@@ -34,14 +34,6 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="{{ Route('pesertaasuransi.index') }}" class="nav-link">
-              <i class="nav-icon far fa-file"></i>
-              <p>
-                Informasi Pengajuan
-              </p>
-            </a>
-          </li>
     <?php } ?>
 
     <?php if(auth()->user()->roles == 'peternak'){ ?>
