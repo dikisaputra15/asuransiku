@@ -15,7 +15,7 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    <label>Nama Pemohon</label>
+                    <label>Nama Peternak</label>
                     <select class="form-control" name="id_user" readonly>
                             <option value="{{auth()->user()->id}}">{{auth()->user()->name}}</option>
                     </select>
@@ -24,11 +24,6 @@
                 <div class="form-group">
                     <label>Tanggal Pengajuan</label>
                     <input type="date" class="form-control" name="tgl_pengajuan" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Nama Peternak</label>
-                    <input type="text" class="form-control" name="nama_peternak" required>
                 </div>
 
                 <div class="form-group">
