@@ -11,7 +11,7 @@
     <td>{{$tim->pemeriksa2}}</td>
   </tr>
 </table>
-<p>telah melakukan pemeriksaan kesehatan ternak dengan keterangan sebgai berikut :</p>
+<p>telah melakukan pemeriksaan kesehatan ternak milik <?php echo $peternak->name; ?> dengan keterangan sebgai berikut :</p>
 
 <table border="1" cellspacing="0" cellpadding="5">
   <tr>

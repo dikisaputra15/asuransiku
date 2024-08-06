@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Periksakesehatan;
 use App\Models\Detailperiksa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -14,8 +15,8 @@ class PeriksakesehatanController extends Controller
     public function index(Request $request)
     {
         $periksas = DB::table('periksakesehatans')
-        ->join('pesertaasuransis', 'pesertaasuransis.id', '=', 'periksakesehatans.id_peserta')
-        ->select('periksakesehatans.*', 'pesertaasuransis.nama_peternak')
+        ->join('users', 'periksakesehatans.id_peserta', '=', 'users.id')
+        ->select('periksakesehatans.*', 'users.name')
         ->orderBy('periksakesehatans.id', 'desc')
         ->get();
         return view('pages.periksas.index', compact('periksas'));
@@ -23,7 +24,10 @@ class PeriksakesehatanController extends Controller
 
     public function create()
     {
-        $pesertas = DB::table('pesertaasuransis')->get();
+        $pesertas = DB::table('pesertaasuransis')
+        ->join('users', 'pesertaasuransis.id_user', '=', 'users.id')
+        ->select('pesertaasuransis.id_user', 'users.name', 'users.id')
+        ->get();
         return view('pages.periksas.create', compact('pesertas'));
     }
 
@@ -42,7 +46,10 @@ class PeriksakesehatanController extends Controller
     public function edit($id)
     {
         $periksakesehatan = \App\Models\Periksakesehatan::findOrFail($id);
-        $pesertas = DB::table('pesertaasuransis')->get();
+        $pesertas = DB::table('pesertaasuransis')
+            ->join('users', 'pesertaasuransis.id_user', '=', 'users.id')
+            ->select('pesertaasuransis.id_user', 'users.name', 'users.id')
+            ->get();
         return view('pages.periksas.edit', compact('periksakesehatan','pesertas'));
     }
 
@@ -117,7 +124,9 @@ class PeriksakesehatanController extends Controller
 
         $tim = Periksakesehatan::find($id);
 
-        $pdf = PDF::loadView('baperiksapdf', compact('details','tim'));
+        $peternak = User::find($tim->id_peserta);
+
+        $pdf = PDF::loadView('baperiksapdf', compact('details','tim','peternak'));
         $pdf->setPaper('A4', 'potrait');
         return $pdf->stream('baperiksapdf.pdf');
     }

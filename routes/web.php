@@ -52,8 +52,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home/permohonan', [App\Http\Controllers\HomeController::class, 'permohonan']);
     Route::get('/suratpengantar/{id}/lihatpdf', [App\Http\Controllers\SuratpengantarController::class, 'lihatpdf']);
     Route::get('/pengajuan/{id}/updatepengajuan', [App\Http\Controllers\PesertaasuransiController::class, 'updatepengajuan']);
+    Route::get('/pengajuan/terima/{id}', [App\Http\Controllers\PesertaasuransiController::class, 'terima']);
+    Route::get('/pengajuan/tolak/{id}', [App\Http\Controllers\PesertaasuransiController::class, 'tolak']);
     Route::post('/prosespengajuan', [App\Http\Controllers\PesertaasuransiController::class, 'prosespengajuan']);
     Route::post('/pdflappengajuan', [App\Http\Controllers\HomeController::class, 'lihatpdfpengajuan']);
     Route::get('/informasi', [App\Http\Controllers\HomeController::class, 'informasi']);
     Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
+    Route::post('/filtermohon', [App\Http\Controllers\HomeController::class, 'filtermohon']);
 });

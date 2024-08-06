@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Data Pengajuan')
+@section('title','Filter Pengajuan')
 
 @section('conten')
 
@@ -10,13 +10,6 @@
         <h3>Data Pengajuan Peserta Asuransi</h3>
     </div>
     <div class="card-body">
-    <div class="form-group">
-        <?php if(auth()->user()->roles == 'peternak'){ ?>
-            <a href="{{route('pesertaasuransi.create')}}" class="btn btn-primary">Add New</a>
-        <?php } ?>
-    </div>
-
-    <?php if(auth()->user()->roles == 'kepala'){ ?>
 
         <div class="card">
         <h5>Filter Berdasarkan Tanggal</h5>
@@ -59,7 +52,6 @@
                 
             </form>
         </div>
-    <?php } ?>
 
 <br><br>
 
@@ -100,41 +92,15 @@
                         <td><a href="{{ Storage::url('filesurat/'.$peserta->surat_pengantar) }}" target="__blank">{{$peserta->surat_pengantar}}</a></td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <?php if(auth()->user()->roles == 'kepala'){ ?>
-                                    <?php if($peserta->keterangan == 'diterima'){ ?>
-                                        <p>diterima</p>
-                                    <?php }elseif($peserta->keterangan == 'ditolak'){ ?>
-                                        <p>ditolak</p>
-                                    <?php }else{ ?>
-                                        <a href="/pengajuan/terima/<?php echo $peserta->id ?>"
+                                <a href="/pengajuan/terima/<?php echo $peserta->id ?>"
                                             class="btn btn-sm btn-success mr-1">
                                             Terima
-                                        </a>
+                                </a>
 
-                                        <a href="/pengajuan/tolak/<?php echo $peserta->id ?>"
+                                <a href="/pengajuan/tolak/<?php echo $peserta->id ?>"
                                             class="btn btn-sm btn-danger">
                                             Tolak
-                                        </a>
-                                    <?php } ?>
-                                <?php } ?>
-
-                                <?php if(auth()->user()->roles == 'peternak'){ ?>
-                                    <a href='{{ route('pesertaasuransi.edit', $peserta->id) }}'
-                                        class="btn btn-sm btn-info btn-icon">
-                                        <i class="fas fa-edit"></i>
-                                        Edit
-                                    </a>
-
-                                    <form action="{{ route('pesertaasuransi.destroy', $peserta->id) }}" method="POST"
-                                        class="ml-2">
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <input type="hidden" name="_token"
-                                            value="{{ csrf_token() }}" />
-                                        <button class="btn btn-sm btn-danger btn-icon confirm-delete" onclick="return confirm('Are you sure to delete this ?');">
-                                            <i class="fas fa-times"></i> Delete
-                                        </button>
-                                    </form>
-                                <?php } ?>
+                                </a>
                             </div>
                         </td>
                     </tr>

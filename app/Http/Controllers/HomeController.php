@@ -24,8 +24,8 @@ class HomeController extends Controller
     public function baperiksa()
     {
         $periksas = DB::table('periksakesehatans')
-        ->join('pesertaasuransis', 'pesertaasuransis.id', '=', 'periksakesehatans.id_peserta')
-        ->select('periksakesehatans.*', 'pesertaasuransis.nama_peternak')
+        ->join('users', 'users.id', '=', 'periksakesehatans.id_peserta')
+        ->select('periksakesehatans.*', 'users.name')
         ->orderBy('periksakesehatans.id', 'desc')
         ->get();
         return view('pages.periksas.listba', compact('periksas'));
@@ -46,7 +46,12 @@ class HomeController extends Controller
         $start_date = $request->start_date;
         $end_date = $request->end_date;
 
-        $laporans = Pesertaasuransi::whereBetween('tgl_pengajuan', [$start_date, $end_date])->where('status', 'diterima')->get();
+        $laporans = DB::table('pesertaasuransis')
+        ->join('users', 'users.id', '=', 'pesertaasuransis.id_user')
+        ->select('pesertaasuransis.*', 'users.name')
+        ->whereBetween('tgl_pengajuan', [$start_date, $end_date])
+        ->where('keterangan', 'diterima')
+        ->get();
 
         $pdf = PDF::loadView('lappengajuanpdf', compact('laporans'));
         $pdf->setPaper('A4', 'landscape');
@@ -68,7 +73,8 @@ class HomeController extends Controller
     public function sk($id)
     {
         $peserta = Pesertaasuransi::find($id);
-        $tim = DB::table('periksakesehatans')->where('id_peserta', $id)->first();
+        $id_peserta = $peserta->id_user;
+        $tim = DB::table('periksakesehatans')->where('id_peserta', $id_peserta)->first();
         $id_periksa = $tim->id;
 
         $details = DB::table('detailperiksas')->where('id_periksa', $id_periksa)->orderBy('detailperiksas.id', 'desc')->get();
@@ -76,5 +82,20 @@ class HomeController extends Controller
         $pdf = PDF::loadView('skpdf', compact('details','tim','peserta'));
         $pdf->setPaper('A4', 'potrait');
         return $pdf->stream('skpdf.pdf');
+    }
+
+    public function filtermohon(Request $request)
+    {
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $keterangan = $request->keterangan;
+
+        $pesertas = DB::table('pesertaasuransis')
+        ->join('users', 'users.id', '=', 'pesertaasuransis.id_user')
+        ->select('pesertaasuransis.*', 'users.name')
+        ->whereBetween('pesertaasuransis.tgl_pengajuan', [$start_date, $end_date])
+        ->where('pesertaasuransis.keterangan', $keterangan)
+        ->get();
+        return view('pages.pesertas.hasilfilter', compact('pesertas'));
     }
 }

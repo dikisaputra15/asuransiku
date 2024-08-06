@@ -20,7 +20,7 @@
   <tr>
     <td>{{ $i++ }}</td>
     <td>{{$pesan->tgl_pengajuan}}</td>
-    <td>{{$pesan->nama_peternak}}</td>
+    <td>{{$pesan->name}}</td>
     <td>{{$pesan->no_hp}}</td>
     <td>{{$pesan->desa}}</td>
     <td>{{$pesan->kecamatan}}</td>
@@ -28,7 +28,7 @@
     <td>{{$pesan->jenis_ternak}}</td>
     <td>{{$pesan->jumlah_ternak}}</td>
     <td>{{$pesan->harga}}</td>
-    <td>{{$pesan->status}}</td>
+    <td>{{$pesan->keterangan}}</td>
   </tr>
   @endforeach
 

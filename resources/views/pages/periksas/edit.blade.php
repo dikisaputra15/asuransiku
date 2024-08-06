@@ -26,14 +26,14 @@
                             <?php
                                 foreach ($pesertas as $peserta) {
 
-                                        if ($peserta->id==$periksakesehatan->id_peserta) {
+                                        if ($peserta->id_user==$periksakesehatan->id_peserta) {
                                             $select="selected";
                                         }else{
                                             $select="";
                                         }
 
                                 ?>
-                                    <option <?php echo $select; ?> value="<?php echo $peserta->id;?>"><?php echo $peserta->nama_peternak; ?></option>
+                                    <option <?php echo $select; ?> value="<?php echo $peserta->id_user;?>"><?php echo $peserta->name; ?></option>
 
                                 <?php } ?>
 

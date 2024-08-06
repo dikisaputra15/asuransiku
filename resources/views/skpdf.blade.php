@@ -32,7 +32,7 @@
 </table>
 
 <p>Dari Hasil Pemeriksaan Ternak dinyatakan SEHAT dan Permohonan Pengajuan Asuransi Bapak/Ibu {{$peserta->nama_peternak}} DITERIMA</p><br><br>
-<center><img src="https://cdn.pixabay.com/photo/2013/07/12/14/45/qr-code-148732_1280.png" style="width: 200px; height:200px;"></center>
+
 <p style="text-align: center;">Tim Pemeriksa</p>
 <p style="text-align: center;">1. {{$tim->pemeriksa1}}</p>
 <p style="text-align: center;">2. {{$tim->pemeriksa2}}</p>

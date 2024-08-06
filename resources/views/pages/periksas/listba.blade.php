@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{$periksa->tgl_pemeriksaan}}</td>
-                        <td>{{$periksa->nama_peternak}}</td>
+                        <td>{{$periksa->name}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
 

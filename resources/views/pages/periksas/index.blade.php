@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{$periksa->tgl_pemeriksaan}}</td>
-                        <td>{{$periksa->nama_peternak}}</td>
+                        <td>{{$periksa->name}}</td>
                         <td>{{$periksa->pemeriksa1}}</td>
                         <td>{{$periksa->pemeriksa2}}</td>
                         <td>

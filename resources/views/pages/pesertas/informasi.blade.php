@@ -23,7 +23,7 @@
                         <th>Jenis Ternak</th>
                         <th>Jumlah Ternak</th>
                         <th>Harga</th>
-                        <th>Status</th>
+                        <th>Keterangan</th>
                         <th>Action</th>
                   </tr>
                   </thead>
@@ -39,10 +39,10 @@
                         <td>{{$peserta->jenis_ternak}}</td>
                         <td>{{$peserta->jumlah_ternak}}</td>
                         <td>{{$peserta->harga}}</td>
-                        <td>{{$peserta->status}}</td>
+                        <td>{{$peserta->keterangan}}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <?php if($peserta->status == 'diterima'){ ?>
+                                <?php if($peserta->keterangan == 'diterima'){ ?>
                                     <a href="/informasi/<?php echo $peserta->id ?>/sk"
                                         class="btn btn-sm btn-success btn-icon mr-2" target="__blank">
                                         <i class="fas fa-file"></i>

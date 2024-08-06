@@ -43,11 +43,11 @@ class PesertaasuransiController extends Controller
         $extension1 = $file1->getClientOriginalExtension();
         $extension2 = $file2->getClientOriginalExtension();
         $extension3 = $file3->getClientOriginalExtension();
-        $nama_peternak = str_replace(" ", "-", $request->nama_peternak);
+        
         $num = hexdec(uniqid());
-        $filename1 = $nama_peternak.'_'.$num.'.'.$extension1;
-        $filename2 = $nama_peternak.'_'.$num.'.'.$extension2;
-        $filename3 = $nama_peternak.'_'.$num.'.'.$extension3;
+        $filename1 = $num.'.'.$extension1;
+        $filename2 = $num.'.'.$extension2;
+        $filename3 = $num.'.'.$extension3;
 
         Storage::putFileAs('public/filektp', $file1, $filename1);
         Storage::putFileAs('public/filefoto', $file2, $filename2);
@@ -63,8 +63,7 @@ class PesertaasuransiController extends Controller
             'jenis_ternak' => $request->jenis_ternak,
             'jumlah_ternak' => $request->jumlah_ternak,
             'harga' => $request->harga,
-            'status' => 'diproses',
-            'keterangan' => 'diperiksa',
+            'keterangan' => 'pengajuan',
             'ktp' => $filename1,
             'foto_ternak' => $filename2,
             'surat_pengantar' => $filename3
@@ -114,12 +113,11 @@ class PesertaasuransiController extends Controller
             $extension2 = $file2->getClientOriginalExtension();
             $extension3 = $file3->getClientOriginalExtension();
 
-            $nama_peternak = str_replace(" ", "-", $request->nama_peternak);
             $num = hexdec(uniqid());
 
-            $filename1 = $nama_peternak.'_'.$num.'.'.$extension;
-            $filename2 = $nama_peternak.'_'.$num.'.'.$extension2;
-            $filename3 = $nama_peternak.'_'.$num.'.'.$extension3;
+            $filename1 = $num.'.'.$extension;
+            $filename2 = $num.'.'.$extension2;
+            $filename3 = $num.'.'.$extension3;
 
             Storage::putFileAs('public/filektp', $file1, $filename1);
             Storage::putFileAs('public/filefoto', $file2, $filename2);
@@ -135,8 +133,7 @@ class PesertaasuransiController extends Controller
                 'jenis_ternak' => $request->jenis_ternak,
                 'jumlah_ternak' => $request->jumlah_ternak,
                 'harga' => $request->harga,
-                'status' => 'diproses',
-                'keterangan' => 'diperiksa',
+                'keterangan' => 'pengajuan',
                 'ktp' => $filename1,
                 'foto_ternak' => $filename2,
                 'surat_pengantar' => $filename3
@@ -152,8 +149,7 @@ class PesertaasuransiController extends Controller
                 'jenis_ternak' => $request->jenis_ternak,
                 'jumlah_ternak' => $request->jumlah_ternak,
                 'harga' => $request->harga,
-                'status' => 'diproses',
-                'keterangan' => 'diperiksa'
+                'keterangan' => 'pengajuan'
             ]);
         }
 
@@ -182,5 +178,23 @@ class PesertaasuransiController extends Controller
         ]);
 
         return redirect('/pesertaasuransi')->with('alert-primary','proses di update');
+    }
+
+    public function terima($id)
+    {
+        DB::table('pesertaasuransis')->where('id',$id)->update([
+            'keterangan' => 'diterima'
+        ]);
+
+        return redirect('/pesertaasuransi')->with('alert-primary','permohonan diterima');
+    }
+
+    public function tolak($id)
+    {
+        DB::table('pesertaasuransis')->where('id',$id)->update([
+            'keterangan' => 'ditolak'
+        ]);
+
+        return redirect('/pesertaasuransi')->with('alert-danger','permohonan ditolak');
     }
 }
