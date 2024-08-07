@@ -29,6 +29,7 @@ Route::get('/alllogin', function () {
 // Route::get('/', function () {
 //     return view('pages.auth.login');
 // });
+Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
 
 Route::middleware(['auth'])->group(function () {
     // Route::get('home', function () {
@@ -57,6 +58,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/prosespengajuan', [App\Http\Controllers\PesertaasuransiController::class, 'prosespengajuan']);
     Route::post('/pdflappengajuan', [App\Http\Controllers\HomeController::class, 'lihatpdfpengajuan']);
     Route::get('/informasi', [App\Http\Controllers\HomeController::class, 'informasi']);
-    Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
     Route::post('/filtermohon', [App\Http\Controllers\HomeController::class, 'filtermohon']);
 });

@@ -1,4 +1,10 @@
-<h3><center>Laporan Pengajuan Peserta Asuransi Hewan Ternak</center></h3>
+
+<table>
+  <tr>
+      <td style="width:150px;"><img src="https://dkpp.serangkab.go.id/front/assets/img/logo-dkpp.svg" style="width: 30px; height: 10px;"></td>
+      <td style="width:550px;"><h3 style="text-align:center; margin-top:40px;">Laporan Pengajuan Peserta Asuransi Hewan Ternak</h3></td>
+  </tr>
+</table>
 <hr>
 
 <table border="1" cellspacing="0" cellpadding="5" width="100%">

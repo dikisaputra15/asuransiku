@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Suratpengantar;
 use App\Models\Pesertaasuransi;
 use App\Models\Periksakesehatan;
+use App\Models\User;
+use BaconQrCode\Renderer\ImageRenderer;
+use BaconQrCode\Renderer\Image\SvgImageBackEnd;
+use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use BaconQrCode\Writer;
 use PDF;
 
 class HomeController extends Controller
@@ -76,10 +81,19 @@ class HomeController extends Controller
         $id_peserta = $peserta->id_user;
         $tim = DB::table('periksakesehatans')->where('id_peserta', $id_peserta)->first();
         $id_periksa = $tim->id;
-
+        $peternak = User::find($id_peserta);
         $details = DB::table('detailperiksas')->where('id_periksa', $id_periksa)->orderBy('detailperiksas.id', 'desc')->get();
 
-        $pdf = PDF::loadView('skpdf', compact('details','tim','peserta'));
+        //QR Code
+        $renderer = new ImageRenderer(
+            new RendererStyle(200), 
+            new SvgImageBackEnd()
+        );
+        $writer = new Writer($renderer);
+        $data = "https://conoha.my.id/informasi/$peserta->id/sk";
+        $qrCodeImage = base64_encode($writer->writeString($data));
+
+        $pdf = PDF::loadView('skpdf', compact('details','tim','peserta','peternak','qrCodeImage'));
         $pdf->setPaper('A4', 'potrait');
         return $pdf->stream('skpdf.pdf');
     }
