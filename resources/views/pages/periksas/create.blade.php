@@ -30,12 +30,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Pemeriksa 1</label>
+                    <label>Nama Pemeriksa 1</label>
                     <input type="text" class="form-control" name="pemeriksa1" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Pemeriksa 2</label>
+                    <label>Nama Pemeriksa 2</label>
                     <input type="text" class="form-control" name="pemeriksa2" required>
                 </div>
 

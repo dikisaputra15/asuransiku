@@ -86,11 +86,11 @@ class HomeController extends Controller
 
         //QR Code
         $renderer = new ImageRenderer(
-            new RendererStyle(200), 
+            new RendererStyle(200),
             new SvgImageBackEnd()
         );
         $writer = new Writer($renderer);
-        $data = "https://conoha.my.id/informasi/$peserta->id/sk";
+        $data = "https://conoha.my.id/detail/$peserta->id/detailpeserta";
         $qrCodeImage = base64_encode($writer->writeString($data));
 
         $pdf = PDF::loadView('skpdf', compact('details','tim','peserta','peternak','qrCodeImage'));
@@ -111,5 +111,12 @@ class HomeController extends Controller
         ->where('pesertaasuransis.keterangan', $keterangan)
         ->get();
         return view('pages.pesertas.hasilfilter', compact('pesertas'));
+    }
+
+    public function detailpeserta($id)
+    {
+        $peserta = Pesertaasuransi::find($id);
+        $nama = User::find($peserta->id_user);
+        return view('pages.pesertas.detailpeserta', compact('peserta','nama'));
     }
 }

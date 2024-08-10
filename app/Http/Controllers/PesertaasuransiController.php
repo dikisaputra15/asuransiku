@@ -43,7 +43,7 @@ class PesertaasuransiController extends Controller
         $extension1 = $file1->getClientOriginalExtension();
         $extension2 = $file2->getClientOriginalExtension();
         $extension3 = $file3->getClientOriginalExtension();
-        
+
         $num = hexdec(uniqid());
         $filename1 = $num.'.'.$extension1;
         $filename2 = $num.'.'.$extension2;
@@ -62,7 +62,6 @@ class PesertaasuransiController extends Controller
             'kabupaten_kota' => $request->kabupaten_kota,
             'jenis_ternak' => $request->jenis_ternak,
             'jumlah_ternak' => $request->jumlah_ternak,
-            'harga' => $request->harga,
             'keterangan' => 'pengajuan',
             'ktp' => $filename1,
             'foto_ternak' => $filename2,
@@ -132,7 +131,6 @@ class PesertaasuransiController extends Controller
                 'kabupaten_kota' => $request->kabupaten_kota,
                 'jenis_ternak' => $request->jenis_ternak,
                 'jumlah_ternak' => $request->jumlah_ternak,
-                'harga' => $request->harga,
                 'keterangan' => 'pengajuan',
                 'ktp' => $filename1,
                 'foto_ternak' => $filename2,
@@ -148,7 +146,6 @@ class PesertaasuransiController extends Controller
                 'kabupaten_kota' => $request->kabupaten_kota,
                 'jenis_ternak' => $request->jenis_ternak,
                 'jumlah_ternak' => $request->jumlah_ternak,
-                'harga' => $request->harga,
                 'keterangan' => 'pengajuan'
             ]);
         }

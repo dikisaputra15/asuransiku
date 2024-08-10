@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('kabupaten_kota');
             $table->string('jenis_ternak');
             $table->integer('jumlah_ternak');
-            $table->double('harga');
             $table->string('keterangan');
             $table->string('ktp');
             $table->string('foto_ternak');

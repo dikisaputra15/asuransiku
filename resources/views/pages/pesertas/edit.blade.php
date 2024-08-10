@@ -58,11 +58,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Harga</label>
-                    <input type="number" class="form-control" name="harga" value="{{ $pesertaasuransi->harga }}">
-                </div>
-
-                <div class="form-group">
                     <label>KTP</label>
                     <input type="file" class="form-control" name="ktp">
                     <input type="text" class="form-control" name="old_file1" value="{{ $pesertaasuransi->ktp }}" hidden>

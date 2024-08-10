@@ -29,7 +29,8 @@ Route::get('/alllogin', function () {
 // Route::get('/', function () {
 //     return view('pages.auth.login');
 // });
-Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
+
+Route::get('/detail/{id}/detailpeserta', [App\Http\Controllers\HomeController::class, 'detailpeserta']);
 
 Route::middleware(['auth'])->group(function () {
     // Route::get('home', function () {
@@ -59,4 +60,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/pdflappengajuan', [App\Http\Controllers\HomeController::class, 'lihatpdfpengajuan']);
     Route::get('/informasi', [App\Http\Controllers\HomeController::class, 'informasi']);
     Route::post('/filtermohon', [App\Http\Controllers\HomeController::class, 'filtermohon']);
+    Route::get('/informasi/{id}/sk', [App\Http\Controllers\HomeController::class, 'sk']);
 });

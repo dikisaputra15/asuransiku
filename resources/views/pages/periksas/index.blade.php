@@ -19,8 +19,8 @@
                         <th>No</th>
                         <th>Tanggal Pemeriksaan</th>
                         <th>Nama Peternak</th>
-                        <th>Pemeriksa 1</th>
-                        <th>Pemeriksa 2</th>
+                        <th>Nama Pemeriksa 1</th>
+                        <th>Nama Pemeriksa 2</th>
                         <th>Action</th>
                   </tr>
                   </thead>

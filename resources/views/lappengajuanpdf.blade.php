@@ -18,7 +18,6 @@
     <th>Kabupaten/Kota</th>
     <th>Jenis Ternak</th>
     <th>Jumlah Ternak</th>
-    <th>Harga</th>
     <th>Status</th>
   </tr>
   @php($i = 1)
@@ -33,11 +32,15 @@
     <td>{{$pesan->kabupaten_kota}}</td>
     <td>{{$pesan->jenis_ternak}}</td>
     <td>{{$pesan->jumlah_ternak}}</td>
-    <td>{{$pesan->harga}}</td>
     <td>{{$pesan->keterangan}}</td>
   </tr>
   @endforeach
 
-</table>
+</table><br><br>
+
+<center>
+<p>Kepala Bagian</p><br><br>
+<p>Ir Sukanta</p>
+</center>
 
 

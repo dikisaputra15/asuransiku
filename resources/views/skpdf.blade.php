@@ -6,7 +6,7 @@
 </table>
 
 <hr>
-<p>Berdasarkan permintaan pemeriksaan kesehatan ternak sebagai persyaratan pendaftaran asuransi usaha ternak sapi dan kerbau (AUTSK) pada program pengembangan ruminansia, tim dinas ketahanan pangan dan pertanian kabupaten serang terdiri dari :</p>
+<p>Berdasarkan permintaan pemeriksaan kesehatan ternak sebagai persyaratan pendaftaran asuransi usaha ternak sapi dan kerbau (AUTSK) pada program pengembangan ruminansia, tim pemeriksa kesehatan hewan ternak dari dinas ketahanan pangan dan pertanian kabupaten serang terdiri dari :</p>
 <table>
   <tr>
     <td>1.</td>
@@ -38,7 +38,9 @@
 </table>
 
 <p>Dari Hasil Pemeriksaan Ternak dinyatakan SEHAT dan Permohonan Pengajuan Asuransi Bapak/Ibu {{$peserta->nama_peternak}} DITERIMA</p><br><br>
-<center><img src="data:image/png;base64,{{ $qrCodeImage }}" alt="QR Code"></center>
-<p style="text-align: center;">Tim Pemeriksa</p>
-<p style="text-align: center;">1. {{$tim->pemeriksa1}}</p>
-<p style="text-align: center;">2. {{$tim->pemeriksa2}}</p>
+<center><img src="data:image/png;base64,{{ $qrCodeImage }}" alt="QR Code"></center><br><br>
+
+<center>
+    <p>Kepala Bagian</p><br><br>
+    <p>Ir Sukanta</p>
+</center>

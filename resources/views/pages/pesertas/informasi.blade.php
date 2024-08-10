@@ -22,7 +22,6 @@
                         <th>Kabupaten / Kota</th>
                         <th>Jenis Ternak</th>
                         <th>Jumlah Ternak</th>
-                        <th>Harga</th>
                         <th>Keterangan</th>
                         <th>Action</th>
                   </tr>
@@ -38,7 +37,6 @@
                         <td>{{$peserta->kabupaten_kota}}</td>
                         <td>{{$peserta->jenis_ternak}}</td>
                         <td>{{$peserta->jumlah_ternak}}</td>
-                        <td>{{$peserta->harga}}</td>
                         <td>{{$peserta->keterangan}}</td>
                         <td>
                             <div class="d-flex justify-content-center">

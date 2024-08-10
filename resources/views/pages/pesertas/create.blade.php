@@ -57,11 +57,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Harga</label>
-                    <input type="number" class="form-control" name="harga" required>
-                </div>
-
-                <div class="form-group">
                     <label>KTP</label>
                     <input type="file" class="form-control" name="ktp" required>
                 </div>

@@ -56,7 +56,7 @@
                 </div>
                 </div>
                 </div>
-                
+
             </form>
         </div>
     <?php } ?>
@@ -74,7 +74,6 @@
                         <th>Kabupaten / Kota</th>
                         <th>Jenis Ternak</th>
                         <th>Jumlah Ternak</th>
-                        <th>Harga</th>
                         <th>Keterangan</th>
                         <th>KTP</th>
                         <th>Foto Ternak</th>
@@ -93,7 +92,6 @@
                         <td>{{$peserta->kabupaten_kota}}</td>
                         <td>{{$peserta->jenis_ternak}}</td>
                         <td>{{$peserta->jumlah_ternak}}</td>
-                        <td>{{$peserta->harga}}</td>
                         <td>{{$peserta->keterangan}}</td>
                         <td><img src="{{ Storage::url('filektp/'.$peserta->ktp) }}" style="width:60px; height:60px;"></td>
                         <td><img src="{{ Storage::url('filefoto/'.$peserta->foto_ternak) }}" style="width:60px; height:60px;"></td>
