@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('id_periksa');
             $table->string('nama_ternak');
             $table->string('nomor');
+            $table->string('berat');
+            $table->string('umur');
             $table->text('hasil_pemeriksaan');
             $table->timestamps();
         });

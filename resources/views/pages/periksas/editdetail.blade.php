@@ -35,6 +35,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Berat Hewan Ternak</label>
+                    <input type="text" class="form-control" name="berat" value="{{$detail->berat}}">
+                </div>
+
+                <div class="form-group">
+                    <label>Umur Hewan Ternak</label>
+                    <input type="text" class="form-control" name="umur" value="{{$detail->umur}}">
+                </div>
+
+                <div class="form-group">
                     <label>Hasil Pemeriksaan</label>
                     <input type="text" class="form-control" name="hasil_pemeriksaan" value="{{$detail->hasil_pemeriksaan}}">
                 </div>

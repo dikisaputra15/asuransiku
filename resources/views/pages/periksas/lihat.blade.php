@@ -30,6 +30,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Berat Hewan Ternak</label>
+                    <input type="text" class="form-control" name="berat" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Umur Hewan Ternak</label>
+                    <input type="text" class="form-control" name="umur" required>
+                </div>
+
+                <div class="form-group">
                     <label>Hasil Pemeriksaan</label>
                     <input type="text" class="form-control" name="hasil_pemeriksaan" required>
                 </div>
@@ -49,6 +59,8 @@
                             <th>No</th>
                             <th>Nama Ternak</th>
                             <th>Nomor</th>
+                            <th>Berat Hewan Ternak</th>
+                            <th>Umur Hewan Ternak</th>
                             <th>Hasil Pemeriksaan</th>
                             <th>Action</th>
                       </tr>
@@ -60,6 +72,8 @@
                             <td>{{ $i++ }}</td>
                             <td>{{$detail->nama_ternak}}</td>
                             <td>{{$detail->nomor}}</td>
+                            <td>{{$detail->berat}}</td>
+                            <td>{{$detail->umur}}</td>
                             <td>{{$detail->hasil_pemeriksaan}}</td>
                             <td>
                                 <div class="d-flex justify-content-center">

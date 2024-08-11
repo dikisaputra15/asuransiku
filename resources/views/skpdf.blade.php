@@ -24,6 +24,8 @@
     <th>No</th>
     <th>Nama Ternak</th>
     <th>Nomor</th>
+    <th>Berat Hewan Ternak</th>
+    <th>Umur Hewan Ternak</th>
     <th>Hasil Pemeriksaan</th>
   </tr>
   @php($i = 1)
@@ -32,6 +34,8 @@
     <td>{{ $i++ }}</td>
     <td>{{$detail->nama_ternak}}</td>
     <td>{{$detail->nomor}}</td>
+    <td>{{$detail->berat}}</td>
+    <td>{{$detail->umur}}</td>
     <td>{{$detail->hasil_pemeriksaan}}</td>
   </tr>
   @endforeach

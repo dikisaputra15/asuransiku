@@ -86,6 +86,8 @@ class PeriksakesehatanController extends Controller
             'id_periksa' => $request->id_periksa,
             'nama_ternak' => $request->nama_ternak,
             'nomor' => $request->nomor,
+            'berat' => $request->berat,
+            'umur' => $request->umur,
             'hasil_pemeriksaan' => $request->hasil_pemeriksaan
         ]);
 
@@ -112,6 +114,8 @@ class PeriksakesehatanController extends Controller
             'id_periksa' => $request->id_periksa,
             'nama_ternak' => $request->nama_ternak,
             'nomor' => $request->nomor,
+            'berat' => $request->berat,
+            'umur' => $request->umur,
             'hasil_pemeriksaan' => $request->hasil_pemeriksaan
 		]);
 

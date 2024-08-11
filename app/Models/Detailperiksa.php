@@ -13,6 +13,8 @@ class Detailperiksa extends Model
         'id_periksa',
         'nama_ternak',
         'nomor',
+        'berat',
+        'umur',
         'hasil_pemeriksaan',
     ];
 }
