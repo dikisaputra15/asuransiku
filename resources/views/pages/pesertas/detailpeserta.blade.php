@@ -99,6 +99,31 @@
         </tr>
     </table>
     </div>
+
+    <div class="card-header bg-white">
+        <h3>Identitas Ternak</h3>
+    </div>
+    <div class="card-body">
+    <table border="1">
+        <tr>
+            <td>Nama Ternak</td>
+            <td>Nomor</td>
+            <td>Berat</td>
+            <td>Umur</td>
+            <td>Hasil Pemeriksaan</td>
+        </tr>
+
+        <?php foreach ($details as $detail) { ?>
+            <tr>
+                <td><?php echo $detail->nama_ternak; ?></td>
+                <td><?php echo $detail->nomor; ?></td>
+                <td><?php echo $detail->berat; ?></td>
+                <td><?php echo $detail->umur; ?></td>
+                <td><?php echo $detail->hasil_pemeriksaan; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+    </div>
 </div>
 
 <script src="{{asset('Growing')}}/js/jquery.min.js"></script>

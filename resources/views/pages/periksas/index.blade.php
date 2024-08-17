@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title','Pemeriksaan Kesehatan Ternak')
+@section('title','Pemeriksaan Kesehatan')
 
 @section('conten')
 
 <x-alert></x-alert>
 <div class="card">
     <div class="card-header bg-white">
-        <h3>Data Pemeriksaan Kesehatan Ternak</h3>
+        <h3>Data Pemeriksaan Kesehatan</h3>
     </div>
     <div class="card-body">
     <div class="form-group">

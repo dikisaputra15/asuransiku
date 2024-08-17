@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title','Form Pemeriksa hewan ternak')
+@section('title','Form Pemeriksaan')
 
 @section('conten')
 
 <x-alert></x-alert>
 <div class="card">
     <div class="card-header bg-white">
-        <h3>Form Pemeriksaan Hewan Ternak</h3>
+        <h3>Form Pemeriksaan</h3>
     </div>
     <div class="card-body">
     <form action="{{ url('periksakesehatan/storehasilperiksa') }}" method="POST">

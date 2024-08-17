@@ -117,6 +117,20 @@ class HomeController extends Controller
     {
         $peserta = Pesertaasuransi::find($id);
         $nama = User::find($peserta->id_user);
-        return view('pages.pesertas.detailpeserta', compact('peserta','nama'));
+
+        $periksas = DB::table('periksakesehatans')
+                ->where('id_peserta', $peserta->id_user)
+                ->get();
+
+        foreach($periksas as $periksa){
+            $id_periksa = $periksa->id;
+        }
+
+        $details = DB::table('detailperiksas')
+                ->where('id_periksa', $id_periksa)
+                ->get();
+
+
+        return view('pages.pesertas.detailpeserta', compact('peserta','nama','details'));
     }
 }
