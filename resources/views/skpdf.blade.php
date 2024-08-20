@@ -1,11 +1,16 @@
 <table>
   <tr>
       <td style="width:150px;"><img src="https://dkpp.serangkab.go.id/front/assets/img/logo-dkpp.svg" style="width: 30px; height: 10px;"></td>
-      <td style="width:550px;"><h3 style="text-align:center; margin-top:40px;">SURAT KETERANGAN PENGAJUAN ASURANSI HEWAN TERNAK</h3></td>
+      <td style="width:550px;">
+        <h3 style="text-align:center; margin-top:40px;">PEMERINTAHAN KABUPATEN SERANG</h3>
+        <h3 style="text-align:center;">DINAS KETAHANAN PANGAN DAN PERTANIAN</h3>
+      </td>
   </tr>
 </table>
 
 <hr>
+<h3 style="text-align:center;"><u>BERITA ACARA PEMERIKSAAN KESEHATAN TERNAK</u></h3>
+<p style="text-align:center;"><u>Nomor: 524/{{$tim->id_peserta}} -DKPP/2024</u></p>
 <p>Berdasarkan permintaan pemeriksaan kesehatan ternak sebagai persyaratan pendaftaran asuransi usaha ternak sapi dan kerbau (AUTSK) pada program pengembangan ruminansia, tim pemeriksa kesehatan hewan ternak dari dinas ketahanan pangan dan pertanian kabupaten serang terdiri dari :</p>
 <table>
   <tr>
