@@ -80,7 +80,11 @@
 
                 <div class="form-group">
                     <label>Jenis Ternak</label>
-                    <input type="text" class="form-control" name="jenis_ternak" value="{{ $pesertaasuransi->jenis_ternak }}">
+                    <select class="form-control" name="jenis_ternak">
+                        <option value="0" <?php if($pesertaasuransi->jenis_ternak=="0") echo 'selected="selected"'; ?>>-Pilih Jenis Ternak-</option>
+                        <option value="kerbau" <?php if($pesertaasuransi->jenis_ternak=="kerbau") echo 'selected="selected"'; ?>>Kerbau</option>
+                        <option value="sapi" <?php if($pesertaasuransi->jenis_ternak=="sapi") echo 'selected="selected"'; ?>>Sapi</option>
+                    </select>
                 </div>
 
                 <div class="form-group">

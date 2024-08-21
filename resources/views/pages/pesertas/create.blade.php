@@ -79,7 +79,11 @@
 
                 <div class="form-group">
                     <label>Jenis Ternak</label>
-                    <input type="text" class="form-control" name="jenis_ternak" required>
+                    <select class="form-control" name="jenis_ternak">
+                        <option value="0">-Pilih Jenis Ternak-</option>
+                        <option value="kerbau">Kerbau</option>
+                        <option value="sapi">Sapi</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
