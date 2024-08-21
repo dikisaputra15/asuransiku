@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label>Tanggal Pemeriksaan</label>
-                    <input type="date" class="form-control" name="tgl_pemeriksaan" required>
+                    <input type="date" class="form-control" name="tgl_pemeriksaan" value="<?php echo date('Y-m-d'); ?>">
                 </div>
 
                 <div class="form-group">

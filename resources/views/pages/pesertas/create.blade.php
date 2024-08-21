@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                     <label>Tanggal Pengajuan</label>
-                    <input type="date" class="form-control" name="tgl_pengajuan" required>
+                    <input type="date" class="form-control" name="tgl_pengajuan" value="<?php echo date('Y-m-d'); ?>">
                 </div>
 
                 <div class="form-group">
@@ -32,18 +32,49 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Desa</label>
-                    <input type="text" class="form-control" name="desa" required>
+                    <label>Kabupaten / Kota</label>
+                    <select class="form-control" name="kabupaten_kota">
+                        <option value="0">-Pilih Kabupaten / Kota-</option>
+                        <option value="kabupaten serang">Kabupaten Serang</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label>Kecamatan</label>
-                    <input type="text" class="form-control" name="kecamatan" required>
+                    <select class="form-control" name="kecamatan">
+                        <option value="0">-Pilih Kecamatan-</option>
+                        <option value="anyar">Anyar</option>
+                        <option value="bandung">Bandung</option>
+                        <option value="baros">Baros</option>
+                        <option value="binuang">Binuang</option>
+                        <option value="bojonegara">Bojonegara</option>
+                        <option value="carenang">Carenang</option>
+                        <option value="cikande">Cikande</option>
+                        <option value="cikeusal">Cikeusal</option>
+                        <option value="cinangka">Cinangka</option>
+                        <option value="ciomas">Ciomas</option>
+                        <option value="ciruas">Ciruas</option>
+                        <option value="gunung sari">Gunung Sari</option>
+                        <option value="jawilan">Jawilan</option>
+                        <option value="kibin">Kibin</option>
+                        <option value="kopo">Kopo</option>
+                        <option value="kragilan">Kragilan</option>
+                        <option value="kramatwatu">Kramatwatu</option>
+                        <option value="lebak wangi">Lebak Wangi</option>
+                        <option value="mancak">Mancak</option>
+                        <option value="pabuaran">Pabuaran</option>
+                        <option value="petir">Petir</option>
+                        <option value="pulo ampel">Pulo Ampel</option>
+                        <option value="tanara">Tanara</option>
+                        <option value="tirtayasa">Tirtayasa</option>
+                        <option value="tunjung teja">Tunjung Teja</option>
+                        <option value="waringinkurung">Waringinkurung</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Kabupaten / Kota</label>
-                    <input type="text" class="form-control" name="kabupaten_kota" required>
+                    <label>Desa</label>
+                    <input type="text" class="form-control" name="desa" required>
                 </div>
 
                 <div class="form-group">
