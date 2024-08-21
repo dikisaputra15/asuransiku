@@ -34,11 +34,8 @@
       <div class="header_top">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">
-              <div class="call_text"><a href="#"><img src="{{asset('Growing')}}/images/call-icon.png"><span class="call_text_left">+01 1234567890</span></a></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="call_text"><a href="#"><img src="{{asset('Growing')}}/images/mail-icon.png"><span class="call_text_left">admin@gmail.com</span></a></div>
+            <div class="col-sm-8">
+              <div class="call_text">Dinas Ketahanan Pangan dan Pertanian </div>
             </div>
           </div>
         </div>
